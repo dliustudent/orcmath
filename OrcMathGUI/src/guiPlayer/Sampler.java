@@ -74,7 +74,7 @@ public class Sampler extends GUIApplication {
 			scroll.update();
 			
 			viewObjects.add(scroll);
-		//	viewObjects.add();
+			viewObjects.add(new Backpacks("backpack", 10, true));
 			
 			TextBox box = new TextBox(20, 160, 200, 100, "Try typing here.");
 			viewObjects.add(box);
