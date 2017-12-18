@@ -2,6 +2,8 @@ package guiPlayer;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.io.FileWriter;
+import java.io.IOException;
 
 import guiTeacher.components.AnimatedComponent;
 import guiTeacher.components.Component;
@@ -35,5 +37,26 @@ public class Backpacks extends Component{
 		g.fillRect(0,0,getWidth(), getHeight());
 	}
 	
-	
+
+	private static void testSaveContent(String fileName) {
+
+		try {
+
+			FileWriter fw = new FileWriter(fileName);
+
+			fw.write("This file was created programmatically.");
+
+			fw.close();
+
+			System.out.println("Success! File \"" + fileName + "\" saved!");
+
+		} catch (IOException e) {
+
+			System.out.println(
+					"An IOException was thrown. \nCheck to see that the directory where you tried to save the file actually exists.");
+
+		}
+
+	}
+
 }

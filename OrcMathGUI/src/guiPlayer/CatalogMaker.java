@@ -37,10 +37,10 @@ public class CatalogMaker {
 		System.out.println("Item added successfully!");
 	}
 	
-	public void Adder() {
-		System.out.println("Enter a backpack");
-		String backpack = nextLine();
-		System.out.println("Enter a price");
-		double price = ;
-	}
+//	public void Adder() {
+//		System.out.println("Enter a backpack");
+//		String backpack = nextLine();
+//		System.out.println("Enter a price");
+//		double price = ;
+//	}
 }
