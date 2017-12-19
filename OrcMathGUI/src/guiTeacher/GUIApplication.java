@@ -30,7 +30,7 @@ import guiTeacher.userInterfaces.Screen;
 import guiTeacher.userInterfaces.Transition;
 
 public abstract class GUIApplication extends JFrame implements Runnable, ComponentListener{
-
+	
 	/**
 	 * 
 	 */
@@ -152,5 +152,4 @@ public abstract class GUIApplication extends JFrame implements Runnable, Compone
 		// TODO Auto-generated method stub
 		
 	}
-	
 }

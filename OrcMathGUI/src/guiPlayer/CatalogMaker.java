@@ -153,16 +153,13 @@ public class CatalogMaker {
 				fileName = in.nextLine();
 				FileReader fileReader = new FileReader(new File(fileName));
 				String line = "";
-				//a BufferedReader enables us to read teh file one line at a time
+				//a BufferedReader enables us to read the file one line at a time
 				BufferedReader br = new BufferedReader(fileReader);
 				while ((line = br.readLine()) != null) {
 
 					String[] param = line.split(",");
 					//add a new Book for each line in the save file
 					catalog.add(new Book(param[0],param[1],Integer.parseInt(param[2])));
-
-
-
 				}
 				br.close();
 				opened = true;

@@ -21,23 +21,12 @@ import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.FileLoader;
 import guiTeacher.userInterfaces.FullFunctionScreen;
 
-public class Sampler extends GUIApplication implements FileRequester{
+public class C extends GUIApplication implements FileRequester{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -2452328323352199392L;
-
-	public Sampler(int width, int height) {
-		super(width, height);
-		setVisible(true);
-		// TODO Auto-generated constructor stub
-	}
-	public static void main(String[] args){
-		Sampler sample = new Sampler(800, 550);
-		Thread go = new Thread(sample);
-		go.start();
-	}
 
 	@Override
 	public void initScreen() {
