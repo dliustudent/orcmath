@@ -11,11 +11,11 @@ import guiTeacher.components.Component;
 public class Backpacks extends Component{
 	
 	private String brand;
-	private double price;
-	private boolean worthIt;
+	private String price;
+	private String worthIt;
 	
 	
-	public Backpacks(String brand, double price, boolean worthIt) {
+	public Backpacks(String brand, String price, String worthIt) {
 		super(40,40,100,100);
 		this.brand = brand;
 		this.price = price;
@@ -37,26 +37,4 @@ public class Backpacks extends Component{
 		g.fillRect(0,0,getWidth(), getHeight());
 	}
 	
-
-	private static void testSaveContent(String fileName) {
-
-		try {
-
-			FileWriter fw = new FileWriter(fileName);
-
-			fw.write("This file was created programmatically.");
-
-			fw.close();
-
-			System.out.println("Success! File \"" + fileName + "\" saved!");
-
-		} catch (IOException e) {
-
-			System.out.println(
-					"An IOException was thrown. \nCheck to see that the directory where you tried to save the file actually exists.");
-
-		}
-
-	}
-
 }

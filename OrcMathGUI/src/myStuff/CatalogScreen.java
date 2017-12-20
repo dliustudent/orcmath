@@ -14,6 +14,7 @@ public class CatalogScreen extends FullFunctionScreen{
 	private TextField mainField;
 	private Button add;
 	private TextArea area;
+	private String b;
 
 	public CatalogScreen(int width, int height) {
 		super(width, height);
@@ -28,6 +29,7 @@ public class CatalogScreen extends FullFunctionScreen{
 		mainField = new TextField(40,40,200,30, "You go here");
 		viewObjects.add(mainField);
 
+	//	mainField.setInputType(TextField.INPUT_TYPE_NUMBERIC);
 		add = new Button(100,100,100,100, "BigButton", new Action() {
 			
 			@Override
@@ -39,9 +41,12 @@ public class CatalogScreen extends FullFunctionScreen{
 		});
 		viewObjects.add(add);
 
-		area = new TextArea(640,30,200,20, "This is a textarea");
+		area = new TextArea(140,200,200,100, "This is a textarea");
 		viewObjects.add(area);
 	}
 
+	protected void addButtonClick() {
+//		String name =                                                                 
+	}
 
 }
