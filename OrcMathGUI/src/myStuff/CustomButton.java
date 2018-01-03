@@ -1,4 +1,4 @@
-package myStuff;
+		package myStuff;
 
 import java.awt.Color;
 import java.awt.FontMetrics;
