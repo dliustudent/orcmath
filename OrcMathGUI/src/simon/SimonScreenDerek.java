@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.sun.prism.paint.Color;
 
+import guiTeacher.components.Action;
 import guiTeacher.components.TextLabel;
 import guiTeacher.interfaces.Visible;
 import guiTeacher.userInterfaces.ClickableScreen;
@@ -20,6 +21,8 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 	private int sequenceIndex;
 	private int lastSelectedButton;
 	private Color[] colors;
+
+
 	
 	public SimonScreenDerek(int width, int height) {
 		super(width, height);
@@ -28,7 +31,13 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 	}
 
 	@Override
-	public void run() {
+	public void run(){
+	    label.setText("");
+	    nextRound();
+	}
+
+	private void nextRound() {
+		// TODO Auto-generated method stub
 		
 	}
 
@@ -67,10 +76,62 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 	}
 
 	private MoveInterfaceDerek addButtons() {
-		int numberofButtons = 10;
-		
+		int numberofButtons = 2;
+		buttons = new ButtonInterfaceDerek[numberofButtons];
+		Color button1 = Color.BLUE;
+		Color button2 = Color.RED;
+		for(int i =0; i <numberofButtons; i++) {
+			ButtonInterfaceDerek b = getAButton();
+			buttons[i] = b;
+			b.setColor(Color.WHITE);
+		    b.setX(5);
+		    b.setY(2);
+		    b.setAction(new Action(){
+
+		    	public void act(){
+		    		if(acceptingInput) {
+		    			Thread blink = new Thread(new Runnable(){
+
+		    				public void run(){
+		    				
+		    			    final ButtonInterfaceDerek b = getAButton();
+		    			    b.highlight();
+		    			    try {
+		    			    Thread.sleep(800);
+		    			    } catch (InterruptedException e) {
+		    			    // TODO Auto-generated catch block
+		    			    e.printStackTrace();
+		    			    }
+		    			    b.dim();
+		    				}});
+		    			blink.start();
+		    		}
+		    		
+		    		if(b == store.get(sequenceIndex).getButton()) {
+						sequenceIndex++;
+
+					}
+					else {
+
+						gameinfo.gameOver();
+					}
+					if(sequenceIndex == store.size()){ 
+						Thread nextRound = new Thread(SimonScreenDerek.this); 
+						nextRound.start(); 
+					
+		    	}
+
+		    	}});
+		}
+		return null;		
+	}
+
+	/**
+	Placeholder until partner finishes implementation of ButtonInterface
+	*/
+	private ButtonInterfaceDerek getAButton() {
+		// TODO Auto-generated method stub
 		return null;
-		
 	}
 
 	private  MoveInterfaceDerek getMove(int bIndex) {
