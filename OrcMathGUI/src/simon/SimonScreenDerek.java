@@ -34,11 +34,60 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 	public void run(){
 	    label.setText("");
 	    nextRound();
+	    store.add(randomMove());
+	    setRound();  
+	    setSequenceSize();
+	    changeText("yes");
+	    label.setText("");
+	    playSequence();
+	}
+
+	private void playSequence() {
+		ButtonInterfaceDerek b = null;
+		 for(int i = 0; i < store.size();i++)
+		 {
+			 if(b != null)
+			 {
+				 b.dim();
+				 b.getButton();
+				 b.highlight();
+				 int sleepTime;
+				 sleepTime = roundNumber +1;
+				 try {
+						Thread.sleep(800);
+						} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+						}		
+	
+			 }
+		 }
+		 b.dim();
+		 
+	}
+
+	private void changeText(String string) {
+		try {
+			Thread.sleep(1000);
+			} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			}		
+	}
+
+	private void setSequenceSize() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void setRound() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private void nextRound() {
-		// TODO Auto-generated method stub
-		
+		acceptingInput = false;
+		roundNumber++;
 	}
 
 	@Override
