@@ -4,6 +4,9 @@ import guiTeacher.GUIApplication;
 
 public class SimonGameDerek extends GUIApplication{
 
+	public static SimonGameDerek example;
+	public static SimonScreenDerek screen;
+	
 	public SimonGameDerek(int width, int height) {
 		super(width, height);
 		setVisible(true);
@@ -11,14 +14,14 @@ public class SimonGameDerek extends GUIApplication{
 	}
 
 	public static void main(String[] args){
-		SimonGameDerek example = new SimonGameDerek(800, 550);
+		example = new SimonGameDerek(800, 550);
 		Thread begin = new Thread(example);
 		begin.start();	
 	}
 	
 	@Override
 	public void initScreen() {
-		SimonScreenDerek screen = new SimonScreenDerek(getWidth(), getHeight());
+		screen = new SimonScreenDerek(getWidth(), getHeight());
 		setScreen(screen);		
 	}
 	
