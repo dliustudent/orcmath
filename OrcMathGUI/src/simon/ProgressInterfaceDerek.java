@@ -4,7 +4,7 @@ import guiTeacher.interfaces.Visible;
 
 public interface ProgressInterfaceDerek extends Visible{
 
-	void setRound();
+	void setNum(int roundNum,int sequenceLength);
+
 	void gameOver();
-	void setSequenceSize();
 }
