@@ -19,17 +19,19 @@ public class ButtonDerek extends Button implements ButtonInterfaceDerek{
 	@Override
 	public void setColor(Color white) {
 		this.setBackgroundColor(white);
+		update();
 	}
 
 	@Override
 	public void highlight() {
-		
+		this.setBackground(this.color);
+		update();
 	}
 
 	@Override
 	public void dim() {
-		// TODO Auto-generated method stub
-		
+		this.setBackground(Color.WHITE);
+		update();		
 	}
 
 	@Override
