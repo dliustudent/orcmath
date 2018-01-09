@@ -1,9 +1,7 @@
 package simon;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
-
-import com.sun.prism.paint.Color;
-
 import guiTeacher.components.Action;
 import guiTeacher.components.Button;
 
@@ -17,16 +15,14 @@ public class ButtonDerek extends Button implements ButtonInterfaceDerek{
 	public void drawButton(Graphics2D g, boolean hover) {
 		
 	}
-	
+
 	@Override
 	public void setColor(Color white) {
-		// TODO Auto-generated method stub
-		
+		this.setBackgroundColor(white);
 	}
 
 	@Override
 	public void highlight() {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -41,5 +37,5 @@ public class ButtonDerek extends Button implements ButtonInterfaceDerek{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

@@ -3,8 +3,7 @@ package simon;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.prism.paint.Color;
-
+import java.awt.Color;
 import guiTeacher.components.Action;
 import guiTeacher.components.TextLabel;
 import guiTeacher.interfaces.Visible;

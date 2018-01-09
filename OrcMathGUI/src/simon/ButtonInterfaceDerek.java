@@ -1,7 +1,6 @@
 package simon;
 
-import com.sun.prism.paint.Color;
-
+import java.awt.Color;
 import guiTeacher.components.Action;
 import guiTeacher.interfaces.Clickable;
 
@@ -15,5 +14,4 @@ public interface ButtonInterfaceDerek extends Clickable{
 
 	void dim();
 	void getButton();
-
 }
