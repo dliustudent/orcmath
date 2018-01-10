@@ -48,7 +48,6 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 			 if(b != null)
 			 {
 				 b.dim();
-				 b.getButton();
 				 b.highlight();
 				 int sleepTime;
 				 sleepTime = roundNumber +1;
@@ -129,7 +128,7 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 		Color button1 = Color.BLUE;
 		Color button2 = Color.RED;
 		for(int i =0; i <numberofButtons; i++) {
-			ButtonInterfaceDerek b = getAButton();
+			ButtonInterfaceDerek b = getAButton(50,i*70+70,60,60);
 			buttons[i] = b;
 			b.setColor(Color.WHITE);
 		    b.setX(5);
@@ -142,7 +141,7 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 
 		    				public void run(){
 		    				
-		    			    final ButtonInterfaceDerek b = getAButton();
+		    			    final ButtonInterfaceDerek b = getAButton(50,70,60,60);
 		    			    b.highlight();
 		    			    try {
 		    			    Thread.sleep(800);
@@ -161,7 +160,7 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 					}
 					else {
 
-						gameinfo.gameOver();
+						gameinfo.lose();
 					}
 					if(sequenceIndex == store.size()){ 
 						Thread nextRound = new Thread(SimonScreenDerek.this); 
@@ -177,9 +176,9 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 	/**
 	Placeholder until partner finishes implementation of ButtonInterface
 	*/
-	private ButtonInterfaceDerek getAButton() {
-		// TODO Auto-generated method stub
-		return null;
+	private ButtonInterfaceDerek getAButton(int x,int y,int w, int h) {
+		ButtonDerek button = new ButtonDerek(x,y,w,h,"",null);
+		return button;
 	}
 
 	private  MoveInterfaceDerek getMove(int bIndex) {

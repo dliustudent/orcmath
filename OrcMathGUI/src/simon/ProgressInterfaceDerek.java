@@ -6,5 +6,5 @@ public interface ProgressInterfaceDerek extends Visible{
 
 	void setNum(int roundNum,int sequenceLength);
 
-	void gameOver();
+	void lose();
 }

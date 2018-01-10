@@ -1,5 +1,6 @@
 package simon;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 
 import guiTeacher.components.Component;
@@ -8,31 +9,39 @@ public class ProgressDerek extends Component implements ProgressInterfaceDerek{
 
 	private int roundNum;
 	private int sequenceNum;
-	private int round;
+	private boolean defeat;
 
-	public ProgressDerek(int x, int y, int w, int h) {
-		super(x, y, w, h);
-		// TODO Auto-generated constructor stub
-		round = 0;
+	public ProgressDerek() {
+		super(250,50,400,200);
 	}
 
 	@Override
-	public void gameOver() {
-		System.out.println("Game Over");
+	public void lose() {
+		defeat = true;
 		update();
-	}
+	} 
 
 	@Override
 	public void setNum(int round,int seq) {
-		roundNum = round;
-		sequenceNum = seq;
+		this.roundNum = round;
+		this.sequenceNum = seq;
 		update();
 		
 	}
+
 	@Override
 	public void update(Graphics2D g) {
-		// TODO Auto-generated method stub
-		
-	}
+		clear();
+		if(defeat) {
+			g.setColor(Color.BLUE);
+			g.drawString("You have lost.",5,50);
+		}else {
+			g.setColor(Color.GREEN);
+			g.drawString("Round: "+roundNum,5,55);
+			g.drawString("Current Sequence Length: "+sequenceNum,5,100);
+		}
 
+	}
+		
 }
+

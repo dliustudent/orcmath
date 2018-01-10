@@ -7,37 +7,38 @@ import guiTeacher.components.Button;
 
 public class ButtonDerek extends Button implements ButtonInterfaceDerek{
 
-	public ButtonDerek(int x, int y, int w, int h, String text, Action action) {
-		super(x, y, w, h, "", null);
-		// TODO Auto-generated constructor stub
-	}
+	private Color buttoncolor;
+	private Action action;
 
-	public void drawButton(Graphics2D g, boolean hover) {
-		
+
+	public ButtonDerek(int x, int y, int w, int h, String text, Object object) {
+		super(x, y, w, h, "", null);
+		update();
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void setColor(Color white) {
-		this.setBackgroundColor(white);
-		update();
-	}
-
-	@Override
-	public void highlight() {
-		this.setBackground(this.color);
-		update();
-	}
-
-	@Override
-	public void dim() {
-		this.setBackground(Color.WHITE);
+		buttoncolor = white;
+		this.setBackground(white);
 		update();		
 	}
 
 	@Override
-	public void getButton() {
-		// TODO Auto-generated method stub
-		
+	public void highlight() {
+		this.setBackground(Color.BLUE);
+		update();		
 	}
-	
+
+	@Override
+	public void dim() {
+		this.setBackground(this.buttoncolor);
+		update();
+	}
+
+	@Override
+	public void setAction(Action a) {
+		this.action = a;
+
+	}
 }
