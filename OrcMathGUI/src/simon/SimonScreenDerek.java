@@ -182,8 +182,7 @@ public class SimonScreenDerek extends ClickableScreen implements Runnable{
 	}
 
 	private  MoveInterfaceDerek getMove(int bIndex) {
-		// TODO Auto-generated method stub
-		return null;
+		return MoveDerek(bIndex);
 	}		
 }
 
